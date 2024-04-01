@@ -1,6 +1,4 @@
 gsap.registerPlugin(ScrollTrigger);
-// ScrollTrigger.refresh();
-// ScrollTrigger.saveStyles();
 const lenis = new Lenis();
 
 lenis.on("scroll", ScrollTrigger.update);
@@ -201,35 +199,31 @@ const onoffMotion = gsap.timeline({
     scrub: 0,
     markers: true,
     ease: "power1.inOut",
-
-    onEnter: function () {
-      $(".sc-onoff").removeClass("on");
-    },
-    onLeaveBack: function () {
-      $(".sc-onoff").addClass("on");
-    },
   },
 });
-
 ScrollTrigger.matchMedia({
   "(max-width: 894px)": function () {
-    onoffMotion.to(".sc-onoff .thumb1 .img-box", { yPercent: -100, zIndex: 5, duration: 3 }, "a+1");
-    onoffMotion.to(".sc-onoff .thumb1 .img-box img", { yPercent: 100, duration: 3 }, "a+1");
-    onoffMotion.to(".sc-onoff .thumb1 .contents-txt", { opacity: 0, duration: 2 }, "a+1");
-    onoffMotion.to(".sc-onoff .thumb1 .text-box", { y: "-10%" }, "=-7");
-    onoffMotion.to(".sc-onoff .thumb1 .text-box", { y: "100%", duration: 1 }, "=-4");
-    onoffMotion.to(".sc-onoff .thumb2 .img-box", { yPercent: -100, duration: 3 }, "a+2");
-    onoffMotion.to(".sc-onoff .thumb2 .img-box img", { yPercent: 100, duration: 3 }, "a+2");
-    onoffMotion.to(".sc-onoff .thumb2 .contents-txt", { opacity: 0, duration: 2 }, "a+2");
-    onoffMotion.to(".sc-onoff .thumb2 .text-box", { y: "-10%" }, "=-6");
-    onoffMotion.to(".sc-onoff .thumb2 .text-box", { y: "100%", duration: 1 }, "=-2");
+    $(".sc-onoff").removeClass("on");
+    gsap.set(".sc-onoff .thumb1 .contents-txt", { left: "50%" });
+    gsap.set(".sc-onoff .thumb2 .contents-txt", { left: "50%" });
+    onoffMotion.to(".sc-onoff .thumb1 .img-box", { yPercent: -100, zIndex: 5, duration: 3 }, "a");
+    onoffMotion.to(".sc-onoff .thumb1 .img-box img", { yPercent: 100, duration: 3 }, "a");
+    onoffMotion.to(".sc-onoff .thumb1 .contents-txt", { opacity: 0, duration: 2 }, "a");
+    onoffMotion.from(".sc-onoff .thumb1 .text-box", { y: "-10%", duration: 2 }, "=-6");
+    onoffMotion.to(".sc-onoff .thumb1 .text-box", { y: "100%", duration: 2 });
+    onoffMotion.to(".sc-onoff .thumb2 .img-box", { yPercent: -100, duration: 3 }, "a+5");
+    onoffMotion.to(".sc-onoff .thumb2 .img-box img", { yPercent: 100, duration: 3 }, "a+5");
+    onoffMotion.to(".sc-onoff .thumb2 .contents-txt", { opacity: 0, duration: 2 }, "a+5");
+    onoffMotion.from(".sc-onoff .thumb2 .text-box", { y: "-10%", duration: 2 }, "=-4");
+    onoffMotion.to(".sc-onoff .thumb2 .text-box", { y: "100%", duration: 2 }, "a+8");
   },
   "(min-width: 895px)": function () {
+    $(".sc-onoff").addClass("on");
     gsap.set(".sc-onoff .thumb1 .img-box", { left: "-40%" });
     gsap.set(".sc-onoff .thumb1 .img-box img", { left: "40%" });
     gsap.set(".sc-onoff .thumb2 .img-box", { left: "50%" });
     gsap.set(".sc-onoff .thumb2 .img-box img", { left: "-50%" });
-    $(".sc-onoff .thumb1 .img-box").on("mouseover", function (e) {
+    $(".sc-onoff .thumb1 .img-box").on("mouseenter", function (e) {
       if ($(".sc-onoff").hasClass("on")) {
         hoverTl1 = gsap
           .timeline()
@@ -243,8 +237,7 @@ ScrollTrigger.matchMedia({
           .to(".sc-onoff .thumb1 .text-box", { y: "0%", zIndex: 4 }, "a");
       }
     });
-
-    $(".sc-onoff .thumb2 .img-box").on("mouseover", function (e) {
+    $(".sc-onoff .thumb2 .img-box").on("mouseenter", function (e) {
       if ($(".sc-onoff").hasClass("on")) {
         hoverTl2 = gsap
           .timeline()
@@ -258,12 +251,10 @@ ScrollTrigger.matchMedia({
           .to(".sc-onoff .thumb1 .text-box", { y: "100%", zIndex: 0 }, "a");
       }
     });
-
     if ($(".sc-onoff").hasClass("on")) {
       onoffMotion.to(".sc-onoff .thumb1 .text-box", { y: "300%", duration: 2, ease: "power1.in", zIndex: -1 }, "a");
       onoffMotion.to(".sc-onoff .thumb2 .text-box", { y: "300%", duration: 2, ease: "power1.in", zIndex: -1 }, "a");
     }
-
     onoffMotion.to(".sc-onoff .cont-inner .contents-txt", { opacity: 0, duration: 1 }, "a=-1");
     onoffMotion.to(".sc-onoff .thumb1 .img-box", { xPercent: -100, duration: 3 }, "a=+1");
     onoffMotion.to(".sc-onoff .thumb1 .img-box img", { xPercent: 100, duration: 3 }, "a=+1");
@@ -312,7 +303,7 @@ ScrollTrigger.matchMedia({
         start: `0% 0%`,
         end: "100% 100%",
         scrub: 2,
-        markers: true,
+        // markers: true,
       },
     });
     introDesc.forEach((element, i) => {
@@ -364,7 +355,7 @@ const gap = gsap.timeline({
     start: "50% 100%",
     end: "100% 100%",
     scrub: 0,
-    markers: true,
+    // markers: true,
   },
 });
 ScrollTrigger.matchMedia({
@@ -411,24 +402,3 @@ const mainSlide = new Swiper(".sc-product .swiper", {
     },
   },
 });
-// $(".next").on("click", function () {
-//   $(".swiper-slide").addClass("on");
-// });
-// $(".prev").on("click", function () {
-//   $(".swiper-slide").removeClass("on");
-// });
-
-// 재생
-// const vid1 = document.getElementById("video1");
-// var start = ScrollTrigger.create({
-//   trigger: vid1,
-//   start: "0% 100%",
-//   end: "100% 0%",
-//   markers: true,
-//   onUpdate: (self) => {
-//     setInterval(function () {
-//       console.log(vid1.currentTime);
-//       vid1.currentTime = self.progress.toFixed(2) * 8;
-//     }, 8);
-//   },
-// });
