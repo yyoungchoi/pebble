@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  box-sizing: border-box;
+}
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  border: 0 solid;
+}
+:root {
+  --color-orange: 251 115 57;
+  --color-white: 242 239 233;
+  --color-light-beige: 215 209 198;
+  --color-dark-beige: 163 155 139;
+  --color-dark-grey: 87 83 73;
+  --color-black: 0 0 0;
+  --color-real-white: 255 255 255;
+  --color-green: 60 66 53;
+  --padding-half-container-mobile: 0.6rem;
+  --padding-container-mobile: 1.2rem;
+  --padding-container: 2rem;
+}
+html {
+  font-size: calc(10 * (100vw / 1440));
+}
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+}
+body {
+  overflow-x: hidden;
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--color-white) / var(--tw-bg-opacity));
+  font-family: Aeonik, sans-serif;
+  font-size: 1.2rem;
+  -webkit-font-smoothing: antialiased;
+}
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+  display: block;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+[hidden] {
+  display: none;
+}
+
+[role="button"],
+button {
+  border: 0;
+  cursor: pointer;
+}
+:disabled {
+  cursor: default;
+}
+a {
+  text-decoration: none;
+}
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+table {
+  text-indent: 0;
+  border-color: inherit;
+  border-collapse: collapse;
+}
+
+button,
+select {
+  text-transform: none;
+}
+button,
+input {
+  border: none;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+input[type="text"],
+input[type="password"] {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+select,
+textarea {
+  border: 0;
+  outline: none;
+}
+
+menu,
+ol,
+ul {
+  list-style: none;
+}
+em,
+address {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder,
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  color: #9ca3af;
+}

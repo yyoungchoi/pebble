@@ -1,0 +1,22 @@
+@font-face {
+  font-family: Youth;
+  src: url(../fonts/Youth-Medium.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Aeonik Fono;
+  src: url(../fonts/AeonikFonoTRIAL-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Aeonik;
+  src: url(../fonts/Aeonik-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
