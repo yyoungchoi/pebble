@@ -197,7 +197,7 @@ const onoffMotion = gsap.timeline({
     start: `50% 0%`,
     end: "100% 100%",
     scrub: 0,
-    markers: true,
+    // markers: true,
     ease: "power1.inOut",
   },
 });
